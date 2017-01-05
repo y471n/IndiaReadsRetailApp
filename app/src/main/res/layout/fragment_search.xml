@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/whiteColor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/error_linear_layout"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:id="@+id/message"
+            android:textSize="22sp"
+            android:text="@string/no_book_available"/>
+
+        <Button
+            android:id="@+id/retry_button"
+            android:hint="@string/retry"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/whiteColor"
+            android:fontFamily="trebuchet ms"
+            android:background="@drawable/button_background"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/complete_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:orientation="vertical"
+    android:background="@color/button_material_light">
+
+    <include
+        android:id="@+id/search_loading_screen"
+        layout="@layout/loading_screen" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/no_result_found"
+        android:text="@string/no_result_founds"
+        android:visibility="gone"/>
+
+
+      <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:orientation="vertical"
+     android:id="@+id/search_content"
+    android:background="@color/button_material_light">
+
+
+    <!--<LinearLayout-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:padding="5dp"-->
+        <!--android:background="#f0040418">-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:padding="4dp"-->
+            <!--android:id="@+id/search_filter_linear_layout"-->
+            <!--android:layout_height="match_parent">-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="18dp"-->
+                <!--android:layout_height="18dp"-->
+                <!--android:layout_marginLeft="22dp"-->
+                <!--android:background="@drawable/filter_white"/>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:textSize="18sp"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:text="@string/filter_tag"-->
+                <!--android:textColor="#ffffff"/>-->
+
+
+        <!--</LinearLayout>-->
+
+        <!--<View-->
+            <!--android:layout_width="2dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="#ffffff"-->
+            <!--/>-->
+
+
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:padding="4dp"-->
+            <!--android:id="@+id/search_sortby_linear_layout"-->
+            <!--android:layout_height="match_parent">-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="18dp"-->
+                <!--android:layout_height="18dp"-->
+                <!--android:layout_marginLeft="22dp"-->
+                <!--android:background="@drawable/sort_white"/>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:textSize="18sp"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:text="@string/sortby"-->
+                <!--android:textColor="#ffffff"/>-->
+
+
+        <!--</LinearLayout>-->
+
+
+
+
+    <!--</LinearLayout>-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        >
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/search_listing_recycler_view"
+            android:layout_width="match_parent"
+            android:minHeight="160dp"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+
+
+</LinearLayout>
+
+
+
+</LinearLayout>

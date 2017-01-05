@@ -1,0 +1,116 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.indiareads.retailapp.corporate.view.fragment.AvailableBookshelfFragmentCorporate"
+    android:orientation="vertical"
+    android:background="#f2f2f2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/available_msg_linear_layout"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:id="@+id/available_books_msg"
+            android:textSize="22sp"
+            android:text="@string/no_book_available"/>
+
+        <Button
+            android:id="@+id/to_home_button"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/whiteColor"
+            android:fontFamily="trebuchet ms"
+            android:background="@drawable/button_background"
+            android:hint="@string/add_now"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/available_books_retry_button"
+            android:hint="@string/retry"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/whiteColor"
+            android:fontFamily="trebuchet ms"
+            android:background="@drawable/button_background"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/available_books_complete_layout"
+        android:orientation="vertical"
+        >
+
+        <include
+            android:id="@+id/available_books_loading_screen"
+            layout="@layout/loading_screen" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:id="@+id/available_books_content"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="16dp"
+                android:layout_above="@+id/checkout_button"
+                android:layout_marginRight="16dp">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/available_books_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:minHeight="200dp"/>
+            </LinearLayout>
+
+            <!--<include-->
+            <!--android:id="@+id/delete_pop_up_linear_layout"-->
+            <!--layout="@layout/delete_pop_up_layout"-->
+            <!--/>-->
+
+            <Button
+                android:id="@+id/checkout_button"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:textColorHint="@color/whiteColor"
+                android:fontFamily="trebuchet ms"
+                android:background="@color/grey"
+                android:hint="@string/checkout_text"
+                android:textSize="@dimen/common_full_screen_button_text_size"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                />
+
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

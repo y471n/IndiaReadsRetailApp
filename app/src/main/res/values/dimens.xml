@@ -1,0 +1,27 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!--<dimen name="navigation_drawer_width">240dp</dimen>-->
+    <dimen name="edit_text_padding">20dp</dimen>
+    <dimen name="home_page_heading_size">24sp</dimen>
+    <dimen name="book_name_text_size">14sp</dimen>
+    <dimen name="min_height_of_recyler_view">203dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <!--<dimen name="tool_bar_height">56dp</dimen>-->
+    <dimen name="button_height">40dp</dimen>
+    <!--<dimen name="button_text_size">24sp</dimen>-->
+    <dimen name="icon_dimensions_width">19dp</dimen>
+    <dimen name="icon_dimension_height">19dp</dimen>
+    <dimen name="edit_text_height">40dp</dimen>
+    <dimen name="text_input_layout_height">60dp</dimen>
+    <dimen name="price_text_size">15sp</dimen>
+    <dimen name="price_small_text_size">11sp</dimen>
+    <dimen name="book_details_left_padding">10dp</dimen>
+    <dimen name="book_details_right_padding">10dp</dimen>
+    <dimen name="book_detail_text_size">14sp</dimen>
+    <dimen name="cart_delivery_payment_image_height">40dp</dimen>
+    <!--<dimen name="common_button_text_size">17sp</dimen>-->
+    <dimen name="common_half_Screen_button_text_size">17sp</dimen>
+    <dimen name="common_full_screen_button_text_size">20sp</dimen>
+</resources>

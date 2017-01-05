@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="greyborder">#CFD8DC</color>
+
+    <color name="windowBackground">#FFFFFF</color>
+
+    <color name="red">#FF0000</color>
+
+    <color name="light_red">#e73517</color>
+    <color name="whiteColor">#FFFFFF</color>
+
+    <!--<color name="greenColor">#00FF00</color>-->
+    <color name="darkGreen">#009933</color>
+
+    <color name="black">#000000</color>
+
+    <!--<color name="PrimaryColor">#2196F3</color>-->
+    <!--<color name="PrimaryDarkColor">#1976D2</color>-->
+
+    <color name="button_transparent_color">#00000000</color>
+
+    <color name="greybackground">#f6f6f6</color>
+
+    <color name="toolBarColor">#0d111f</color>
+    <color name="colorPrimaryDark">#080a12</color>
+
+
+    <color name="blueColor">#0000FF</color>
+
+    <!--<color name="secondaryTextColor">#5a5a5a</color>-->
+
+    <color name="hometabtext">#ffffff</color>
+
+    <!--<color name="primaryColor">#2196f3</color>-->
+    <color name="sliding_tab">#ef372d</color>
+    <color name="category_bar">#000000</color>
+    <color name="filter_left_panel_color">#22221E</color>
+    <color name="grey">#808080</color>
+    <color name="forgot_password_color">#0181ab</color>
+    <color name="transparent_button_text_color">#e73517</color>
+    <color name="text_color_primary">#505050</color>
+
+
+</resources>

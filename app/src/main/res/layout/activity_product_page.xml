@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.indiareads.retailapp.views.activities.ProductPageActivity">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+    <ListView
+        android:id="@+id/search_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/product_page_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/app_bar"
+        android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/product_page_fragement"
+        android:name="com.indiareads.retailapp.views.fragments.ProductPageFragment"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        tools:layout="@layout/fragment_product_page" />
+
+    </LinearLayout>
+
+</RelativeLayout>

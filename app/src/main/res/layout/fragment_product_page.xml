@@ -1,0 +1,1213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/whiteColor">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/error_linear_layout"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:id="@+id/product_page_msg"
+            android:textSize="22sp"
+            android:text="@string/no_book_available"/>
+
+        <Button
+            android:id="@+id/retry_button"
+            android:hint="@string/retry"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/whiteColor"
+            android:fontFamily="trebuchet ms"
+            android:background="@drawable/button_background"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/product_page_complete_layout"
+        android:orientation="vertical"
+        >
+
+        <include
+            android:id="@+id/product_page_loading_screen"
+            layout="@layout/loading_screen" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/product_page_content"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_above="@+id/footer">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:isScrollContainer="false"
+                    android:scrollbars="none"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:id="@+id/book_title"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/black"
+                            android:text="@string/book_name_dummy_text"
+                            android:gravity="center"
+                            android:textSize="21sp"
+                            android:layout_height="wrap_content" />
+
+
+                        <!--contributor_name1 name linear layout -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:textStyle="bold"
+                                android:text="@string/by_tag"
+                                android:gravity="right"
+                                android:textSize="20sp"
+                                android:layout_height="match_parent" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:id="@+id/author_name"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="5dp"
+                                android:text="@string/author_name_dummy_text"
+                                android:textSize="20sp"
+                                android:layout_height="match_parent" />
+
+
+
+                        </LinearLayout>
+
+
+                        <!--book image -->
+                        <com.android.volley.toolbox.NetworkImageView
+                            android:id="@+id/book_image"
+                            android:background="@drawable/test"
+                            android:layout_width="130dp"
+                            android:layout_gravity="center"
+                            android:scaleType="fitXY"
+                            android:layout_height="200dp"
+                            />
+
+
+                        <!--&lt;!&ndash;book_description &ndash;&gt;-->
+                        <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:id="@+id/book_short_description"-->
+                        <!--android:layout_marginTop="12dp"-->
+                        <!--android:text="@string/book_description_dummy_text"-->
+                        <!--android:gravity="center"-->
+                        <!--android:textStyle="bold"-->
+                        <!--android:textSize="15sp"-->
+                        <!--android:layout_height="wrap_content" />-->
+
+
+                        <!--Price linear layout -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:id="@+id/price_layout"
+                            android:background="@color/whiteColor"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:id="@+id/buy_details_linear_layout"
+                                android:gravity="center"
+                                android:baselineAligned="false">
+                                <!--actual mrp relative layout -->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:paddingRight="10dp"
+                                    android:layout_height="wrap_content">
+
+                                    <!--MRP tag text view -->
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:textStyle="bold"
+                                        android:text="@string/buy_tag"
+                                        android:gravity="end"
+                                        android:textSize="@dimen/price_text_size"
+                                        android:layout_height="wrap_content" />
+
+                                    <FrameLayout
+                                        xmlns:android="http://schemas.android.com/apk/res/android"
+                                        android:layout_width="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_height="wrap_content"
+                                        >
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                             <TextView
+                                                android:layout_width="wrap_content"
+                                                android:textStyle="bold"
+                                                android:text="@string/rs_tag"
+                                                 android:textColor="@color/gray"
+                                                android:textSize="@dimen/price_small_text_size"
+                                                android:layout_height="wrap_content" />
+
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:textStyle="bold"
+                                                android:id="@+id/book_mrp_1"
+                                                android:textColor="@color/gray"
+                                                android:textSize="@dimen/price_small_text_size"
+                                                android:layout_height="wrap_content" />
+
+
+                                        </LinearLayout>
+
+                                        <View
+                                            android:layout_width="40dp"
+                                            android:layout_height="1dip"
+                                            android:layout_marginTop="8dp"
+                                            android:background="@color/black"
+                                            android:layout_toRightOf="@id/rs_tag_cost_linear_layout"/>
+
+                                    </FrameLayout>
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:textStyle="bold"
+                                    android:text="|"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp"
+                                    android:textSize="@dimen/price_text_size"
+                                    android:layout_height="match_parent" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1.2"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_height="wrap_content">
+
+
+                                    <FrameLayout
+                                        xmlns:android="http://schemas.android.com/apk/res/android"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        >
+
+                                        <!--Rs tag and cost linear layout -->
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:textStyle="bold"
+                                                android:text="@string/price"
+                                                android:textSize="@dimen/price_text_size"
+                                                android:layout_height="match_parent" />
+
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:textStyle="bold"
+                                                android:id="@+id/buy_book_mrp"
+                                                android:paddingLeft="5dp"
+                                                android:textSize="@dimen/price_text_size"
+                                                android:layout_height="match_parent" />
+
+                                        </LinearLayout>
+
+
+
+                                    </FrameLayout>
+
+                                    </LinearLayout>
+
+
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                android:baselineAligned="false">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:paddingRight="10dp"
+                                    android:layout_height="wrap_content">
+                                    <!--MRP tag text view -->
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:textStyle="bold"
+                                        android:text="@string/rent_tag_2"
+                                        android:gravity="end"
+                                        android:textSize="@dimen/price_text_size"
+                                        android:layout_height="wrap_content" />
+                                    <FrameLayout
+                                        xmlns:android="http://schemas.android.com/apk/res/android"
+                                        android:layout_width="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_height="wrap_content"
+                                        >
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:textStyle="bold"
+                                                android:text="@string/rs_tag"
+                                                android:textColor="@color/gray"
+                                                android:textSize="@dimen/price_small_text_size"
+                                                android:layout_height="wrap_content" />
+
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:textStyle="bold"
+                                                android:id="@+id/book_mrp_2"
+                                                android:textColor="@color/gray"
+                                                android:textSize="@dimen/price_small_text_size"
+                                                android:layout_height="wrap_content" />
+
+
+                                        </LinearLayout>
+
+                                        <View
+                                            android:layout_width="40dp"
+                                            android:layout_height="1dip"
+                                            android:layout_marginTop="8dp"
+                                            android:background="@color/black"
+                                            android:layout_toRightOf="@id/rs_tag_cost_linear_layout"/>
+
+                                    </FrameLayout>
+                          </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:textStyle="bold"
+                                    android:text="|"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp"
+                                    android:textSize="@dimen/price_text_size"
+                                    android:layout_height="match_parent" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1.2"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_height="wrap_content">
+
+                                <FrameLayout
+                                    xmlns:android="http://schemas.android.com/apk/res/android"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    >
+
+                                    <!--Rs tag and cost linear layout -->
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:textStyle="bold"
+                                            android:text="@string/initial_payable"
+                                            android:textSize="@dimen/price_text_size"
+                                            android:layout_height="match_parent" />
+
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:textStyle="bold"
+                                            android:id="@+id/initial_payable"
+                                            android:paddingLeft="5dp"
+                                            android:textSize="@dimen/price_text_size"
+                                            android:layout_height="match_parent" />
+
+                                    </LinearLayout>
+
+
+
+                                </FrameLayout>
+
+                                   </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dip"
+                                android:background="@color/greyborder"
+                                />
+
+
+
+                            <!--select linear layout -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="65dp"
+                                android:orientation="horizontal">
+
+                                <!--30 days linear layout -->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:id="@+id/thirty_days_linear_layout"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="20dp"
+                                        android:layout_marginTop="10dp"
+                                        android:textStyle="bold"
+                                        android:text="@string/days30_tag"
+                                        android:gravity="center"
+                                        />
+
+                                    <ImageView
+                                        android:layout_width="13dp"
+                                        android:layout_height="13dp"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_gravity="center"
+                                        android:id="@+id/thirty_days_radio_button_image"
+                                        android:src="@drawable/rent_selected"/>
+
+                                </LinearLayout>
+
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/greyborder"
+                                    />
+
+
+                                <!--90 days linear layout -->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:id="@+id/ninty_days_linear_layout"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="20dp"
+                                        android:layout_marginTop="10dp"
+                                        android:textStyle="bold"
+                                        android:text="@string/days90_tag"
+                                        android:gravity="center"
+                                        />
+
+                                    <ImageView
+                                        android:layout_width="13dp"
+                                        android:layout_height="13dp"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_gravity="center"
+                                        android:id="@+id/ninty_days_radio_button_image"
+                                        android:src="@drawable/rent_not_selected"/>
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/greyborder"
+                                    />
+
+                                <!--180 days linear layout -->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:id="@+id/one_eighty_days_linear_layout"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="20dp"
+                                        android:layout_marginTop="10dp"
+                                        android:textStyle="bold"
+                                        android:text="@string/days180_tag"
+                                        android:gravity="center"
+                                        />
+
+                                    <ImageView
+                                        android:layout_width="13dp"
+                                        android:layout_height="13dp"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_gravity="center"
+                                        android:id="@+id/one_eighty_days_radio_button_image"
+                                        android:src="@drawable/rent_not_selected"/>
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/greyborder"
+                                    />
+
+
+                                <!--360 days linear layout -->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:id="@+id/three_sixty_days_linear_layout"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="20dp"
+                                        android:layout_marginTop="10dp"
+                                        android:textStyle="bold"
+                                        android:text="@string/days360_tag"
+                                        android:gravity="center"
+                                        />
+
+                                    <ImageView
+                                        android:layout_width="13dp"
+                                        android:layout_height="13dp"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_gravity="center"
+                                        android:id="@+id/three_sixty_days_radio_button_image"
+                                        android:src="@drawable/rent_not_selected"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dip"
+                                android:background="@color/greyborder"
+                                />
+
+
+                            <!--rent mrp linear layout -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:padding="1dp"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="135dp"
+                                    android:text="@string/rent_tag"
+                                    android:gravity="end"
+                                    android:textStyle="bold"
+                                    android:textSize="17sp"
+                                    android:textColor="@color/red"
+                                    android:layout_height="match_parent" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:text="@string/rent_dummy_text"
+                                    android:id="@+id/book_rent"
+                                    android:layout_marginLeft="5dp"
+                                    android:gravity="end"
+                                    android:textStyle="bold"
+                                    android:textSize="17sp"
+                                    android:textColor="@color/red"
+                                    android:layout_height="match_parent" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:text="@string/save_tag"
+                                    android:layout_marginLeft="15dp"
+                                    android:textStyle="bold"
+                                    android:textSize="15sp"
+                                    android:layout_height="match_parent" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:id="@+id/save_rs"
+                                    android:layout_marginLeft="5dp"
+                                    android:textStyle="bold"
+                                    android:textSize="15sp"
+                                    android:layout_height="match_parent" />
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:text="@string/per_sign_text"
+                                    android:textStyle="bold"
+                                    android:textSize="17sp"
+                                    android:layout_height="match_parent" />
+
+
+                            </LinearLayout>
+
+
+
+
+                        </LinearLayout>
+
+
+                        <!--Delivery info and other info  linear layout -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/whiteColor"
+                            android:orientation="vertical">
+
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:textSize="16sp"
+                                android:text="@string/delivery_detail_tag"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageButton
+                                    android:scaleType="fitXY"
+                                    android:layout_width="15dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_height="15dp"
+                                    android:background="@drawable/bullet_point">
+                                </ImageButton>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:textColor="@color/black"
+                                    android:textSize="13sp"
+                                    android:text="@string/deliver_info1_text"
+                                    />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:orientation="horizontal">
+
+                                <ImageButton
+                                    android:scaleType="fitXY"
+                                    android:layout_width="15dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_height="15dp"
+                                    android:background="@drawable/bullet_point">
+                                </ImageButton>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:textColor="@color/black"
+                                    android:textSize="13sp"
+                                    android:text="@string/deliver_info2_text"
+                                    />
+
+
+                            </LinearLayout>
+
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/greyborder"
+                                />
+
+                            <!--shortDesc of the book linear layout  -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_marginTop="3dp"
+                                android:gravity="center_vertical"
+                                android:id="@+id/summary_of_book_linear_layout"
+                                android:orientation="horizontal"
+                                >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp"
+                                    android:text="@string/summary_of_the_book_text"
+                                    />
+
+                                <!--linear layout to put arrow button on right -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginRight="18dp"
+                                    android:gravity="center_vertical|right"
+                                    >
+
+
+                                    <ImageView
+                                        android:id="@+id/summary_arrow"
+                                        android:layout_width="15dp"
+                                        android:layout_height="15dp"
+                                        android:src="@drawable/down_arrow"
+                                        />
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:textSize="16sp"
+                                android:visibility="gone"
+                                android:id="@+id/summary_of_the_book"
+                                />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="3dp"
+                                android:background="@color/greyborder"
+                                />
+
+
+
+                            <!--About contributor_name1 linear layout  -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_marginTop="3dp"
+                                android:gravity="center_vertical"
+                                android:id="@+id/author_details_linear_layout"
+                                android:orientation="horizontal"
+                                >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp"
+                                    android:text="@string/about_author_text"
+                                    />
+
+
+                                <!--linear layout to put arrow button on right -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginRight="18dp"
+                                    android:gravity="center_vertical|right"
+                                    >
+
+
+                                    <ImageView
+                                        android:id="@+id/author_arrow"
+                                        android:layout_width="15dp"
+                                        android:layout_height="15dp"
+                                        android:src="@drawable/down_arrow"
+                                        />
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="3dp"
+                                android:background="@color/greyborder"
+                                />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:textSize="16sp"
+                                android:visibility="gone"
+                                android:id="@+id/author_details"
+                                android:text="@string/book_description_dummy_text"
+                                />
+
+
+                            <!--book details linear layout  -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_marginTop="3dp"
+                                android:id="@+id/book_detail_linear_layout"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp"
+                                    android:text="@string/book_details_text"
+                                    />
+
+                                <!--linear layout to put arrow button on right -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginRight="18dp"
+                                    android:gravity="center_vertical|right"
+                                    >
+
+
+                                    <ImageView
+                                        android:id="@+id/book_details_arrow"
+                                        android:layout_width="15dp"
+                                        android:layout_height="15dp"
+                                        android:src="@drawable/down_arrow"
+                                        />
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="3dp"
+                                android:background="@color/greyborder"
+                                />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/book_details"
+                                android:visibility="gone"
+                                android:orientation="vertical">
+                                <!--isbn details-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="left"
+                                        android:textSize="@dimen/book_detail_text_size"
+                                        android:paddingLeft="@dimen/book_details_left_padding"
+                                        android:text="@string/isbn_tag"
+                                        android:layout_height="wrap_content" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="right"
+                                        android:textSize="@dimen/book_detail_text_size"
+                                        android:id="@+id/book_isbn"
+                                        android:paddingRight="@dimen/book_details_right_padding"
+                                        android:layout_height="wrap_content" />
+
+                                </LinearLayout>
+
+                                <!--publisher details-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="left"
+                                        android:paddingLeft="@dimen/book_details_left_padding"
+                                        android:text="@string/publisher_tag"
+                                        android:textSize="@dimen/book_detail_text_size"
+                                        android:layout_height="wrap_content" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="right"
+                                        android:id="@+id/book_publisher"
+                                        android:textSize="@dimen/book_detail_text_size"
+                                        android:paddingRight="@dimen/book_details_right_padding"
+                                        android:layout_height="wrap_content" />
+
+                                </LinearLayout>
+
+                                <!--imprint details-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="left"
+                                        android:paddingLeft="@dimen/book_details_left_padding"
+                                        android:text="@string/imprint"
+                                        android:textSize="@dimen/book_detail_text_size"
+                                        android:layout_height="wrap_content" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="right"
+                                        android:id="@+id/book_imprint"
+                                        android:textSize="@dimen/book_detail_text_size"
+                                        android:paddingRight="@dimen/book_details_right_padding"
+                                        android:layout_height="wrap_content" />
+
+                                </LinearLayout>
+
+                                <!--number of pages-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="left"
+                                        android:paddingLeft="@dimen/book_details_left_padding"
+                                        android:text="@string/no_page_tag"
+                                        android:textSize="@dimen/book_detail_text_size"
+                                        android:layout_height="wrap_content" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="right"
+                                        android:id="@+id/book_number_of_pages"
+                                        android:textSize="@dimen/book_detail_text_size"
+                                        android:paddingRight="@dimen/book_details_right_padding"
+                                        android:layout_height="wrap_content" />
+
+                                </LinearLayout>
+
+                                <!--publication details-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="left"
+                                        android:paddingLeft="@dimen/book_details_left_padding"
+                                        android:text="@string/publication_date_tag"
+                                        android:textSize="@dimen/book_detail_text_size"
+                                        android:layout_height="wrap_content" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="right"
+                                        android:id="@+id/book_publication_date"
+                                        android:textSize="@dimen/book_detail_text_size"
+                                        android:paddingRight="@dimen/book_details_right_padding"
+                                        android:layout_height="wrap_content" />
+
+                                </LinearLayout>
+
+                                <!--language details-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="left"
+                                        android:paddingLeft="@dimen/book_details_left_padding"
+                                        android:text="@string/language_tag"
+                                        android:textSize="@dimen/book_detail_text_size"
+                                        android:layout_height="wrap_content" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="right"
+                                        android:id="@+id/book_language"
+                                        android:textSize="@dimen/book_detail_text_size"
+                                        android:paddingRight="@dimen/book_details_right_padding"
+                                        android:layout_height="wrap_content" />
+
+                                </LinearLayout>
+
+                                <!--binding details-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="left"
+                                        android:paddingLeft="@dimen/book_details_left_padding"
+                                        android:text="@string/isbn_binding"
+                                        android:textSize="@dimen/book_detail_text_size"
+                                        android:layout_height="wrap_content" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="right"
+                                        android:textSize="@dimen/book_detail_text_size"
+                                        android:id="@+id/book_binding"
+                                        android:paddingRight="@dimen/book_details_right_padding"
+                                        android:layout_height="wrap_content" />
+
+                                </LinearLayout>
+
+
+
+
+
+
+                            </LinearLayout>
+
+
+                            <!--&lt;!&ndash;Reviews linear layout  &ndash;&gt;-->
+                            <!--<LinearLayout-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="35dp"-->
+                                <!--android:layout_marginTop="3dp"-->
+                                <!--android:gravity="center_vertical"-->
+                                <!--android:id="@+id/reviews_linear_layout"-->
+                                <!--android:orientation="horizontal"-->
+                                <!--&gt;-->
+
+                                <!--<TextView-->
+                                    <!--android:layout_width="wrap_content"-->
+                                    <!--android:layout_height="wrap_content"-->
+                                    <!--android:layout_marginLeft="10dp"-->
+                                    <!--android:textColor="@color/black"-->
+                                    <!--android:textSize="16sp"-->
+                                    <!--android:text="@string/reviews_text"-->
+                                    <!--/>-->
+
+
+                                <!--&lt;!&ndash;linear layout to put arrow button on right &ndash;&gt;-->
+                                <!--<LinearLayout-->
+                                    <!--android:layout_width="match_parent"-->
+                                    <!--android:layout_height="match_parent"-->
+                                    <!--android:layout_marginRight="18dp"-->
+                                    <!--android:gravity="center_vertical|right"-->
+                                    <!--&gt;-->
+
+
+                                    <!--<ImageView-->
+                                        <!--android:id="@+id/reviws_arrow"-->
+                                        <!--android:layout_width="15dp"-->
+                                        <!--android:layout_height="15dp"-->
+                                        <!--android:src="@drawable/down_arrow"-->
+                                        <!--/>-->
+
+                                <!--</LinearLayout>-->
+
+
+
+                            <!--</LinearLayout>-->
+
+                            <!--<View-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="1dp"-->
+                                <!--android:layout_marginTop="3dp"-->
+                                <!--android:background="@color/greyborder"-->
+                                <!--/>-->
+
+
+
+
+                            <!--<TextView-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginLeft="10dp"-->
+                                <!--android:textSize="16sp"-->
+                                <!--android:visibility="gone"-->
+                                <!--android:id="@+id/book_reviews"-->
+                                <!--android:text="@string/book_description_dummy_text"-->
+                                <!--/>-->
+
+
+
+
+
+
+
+                        </LinearLayout>
+
+
+                        <!-- Linear layout - HEADING - SIMILAR BOOKS -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/similar_books_title"
+                            android:paddingBottom="8dp"
+                            android:paddingTop="16dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/smiliar_books_tag"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@color/black"
+                                android:textSize="19sp" />
+
+                        </LinearLayout>
+
+                        <!-- loading screen for Similar books -->
+                        <include
+                            android:id="@+id/similar_books_loading_screen"
+                            layout="@layout/loading_screen" />
+
+                        <!-- SIMILAR BOOKS recycler view -->
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/similar_books_recycler_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:minHeight="@dimen/min_height_of_recyler_view"
+                            android:orientation="horizontal" />
+
+
+
+
+
+                    </LinearLayout>
+
+
+                </ScrollView>
+
+            </LinearLayout>
+
+            <!--footer linear layout -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/footer"
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <!--buy book linear layout-->
+                         <Button
+                            android:id="@+id/buy_now_button"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="@dimen/button_height"
+                             android:layout_margin="5dp"
+                            android:textColorHint="@color/whiteColor"
+                            android:fontFamily="trebuchet ms"
+                            android:background="@drawable/button_background"
+                            android:hint="@string/buy_now_text"
+                            android:textSize="@dimen/common_half_Screen_button_text_size"
+                            android:textStyle="bold"
+                            />
+                        <Button
+                            android:id="@+id/rent_now_button"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="@dimen/button_height"
+                            android:textSize="@dimen/common_half_Screen_button_text_size"
+                            android:textStyle="bold"
+                            android:layout_margin="5dp"
+                            android:textColorHint="@color/whiteColor"
+                            android:fontFamily="trebuchet ms"
+                            android:background="@drawable/button_background"
+                            android:hint="@string/rent_now_text"
+                            />
+
+
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

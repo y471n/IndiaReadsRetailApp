@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.indiareads.retailapp.corporate.view.activity.ReturnBookAddAddressActivityCorporate">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+
+    <fragment
+        android:id="@+id/return_book_add_address_fragment"
+        android:name="com.indiareads.retailapp.corporate.view.fragment.ReturnBookAddAddressFragmentCorporate"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/app_bar"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        tools:layout="@layout/fragment_return_book_add_address_corporate" />
+
+</RelativeLayout>

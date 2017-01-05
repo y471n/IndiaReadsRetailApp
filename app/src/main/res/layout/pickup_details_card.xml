@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/category_listing_card_view"
+    android:layout_width="match_parent"
+    android:layout_marginTop="16dp"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical">
+
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/pickup_details_book_item_imageview"
+                android:contentDescription="@string/books_item_icon"
+                android:layout_width="92dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/test"
+                android:scaleType="fitXY"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:padding="3dp"
+           >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cart_book_name"
+                android:id="@+id/pick_up_details_book_name"
+                android:textColor="@color/material_blue_grey_800"
+                android:textSize="14sp" />
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="12sp"-->
+                    <!--android:textColor="@color/material_blue_grey_800"-->
+                    <!--android:text="@string/left_bracket" />-->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/pickup_details_type_of_book"-->
+                    <!--android:textSize="12sp"-->
+                    <!--android:textColor="@color/material_blue_grey_800"-->
+                    <!--android:text="@string/type_dummy_text" />-->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="12sp"-->
+                    <!--android:textColor="@color/material_blue_grey_800"-->
+                    <!--android:text="@string/right_bracket" />-->
+
+
+            <!--</LinearLayout>-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/material_blue_grey_800"
+                android:text="@string/cart_book_author_name"
+                android:layout_marginTop="5dp"
+                android:id="@+id/pickup_details_author_name"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:textColor="@color/material_blue_grey_800"
+                    android:text="@string/initial_payable" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/colon"
+                    android:textColor="@color/material_blue_grey_800"
+                    android:textSize="13sp"
+                    android:layout_marginLeft="10dp" />
+
+                    <!--Rs tag and cost linear layout -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:id="@+id/rs_tag_cost_linear_layout"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cart_book_item_price"
+                            android:textSize="13sp"
+                            android:textColor="@color/material_blue_grey_800"
+                            android:paddingLeft="5dp"
+                            android:id="@+id/pickup_details_book_mrp" />
+
+                    </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:textColor="@color/material_blue_grey_800"
+                    android:text="@string/rent_applicable_tag"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/colon"
+                    android:textSize="13sp"
+                    android:textColor="@color/material_blue_grey_800"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:textSize="13sp"
+                    android:textColor="@color/material_blue_grey_800"
+                    android:text="@string/rent_start_price_dummydata"
+                    android:id="@+id/pickup_details_rent_applicable" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ff7943"
+                    android:textSize="13sp"
+                    android:text="@string/refund_amount_tag"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/colon"
+                    android:textColor="#ea1a1a1a"
+                    android:textSize="13sp"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ff7943"
+                    android:paddingLeft="5dp"
+                    android:text="@string/refund_price_dummydata"
+                    android:textSize="13sp"
+                    android:id="@+id/pickup_details_refund_amount" />
+            </LinearLayout>
+
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:gravity="right">-->
+                <!-- -->
+            <!--<Button-->
+                <!--style="?android:attr/borderlessButtonStyle"-->
+                <!--android:layout_width="20dp"-->
+                <!--android:layout_height="20dp"-->
+                <!--android:paddingRight="5dp"-->
+                <!--android:background="@drawable/delete_grey"-->
+                <!--android:id="@+id/pickup_details_card_delete"/>-->
+
+                <!--</LinearLayout>-->
+
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

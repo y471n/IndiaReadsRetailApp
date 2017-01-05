@@ -1,0 +1,178 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.indiareads.retailapp.corporate.view.fragment.MyCartFragmentCorporate">
+
+    <include
+        android:id="@+id/cart_loading_screen"
+        layout="@layout/loading_screen" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/no_book_in_cart_text_view"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:text="@string/cart_is_empty" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="17sp"
+            android:layout_marginTop="10dp"
+            android:text="@string/cart_is_empty_2"
+            android:layout_marginBottom="25dp"/>
+
+        <Button
+            android:id="@+id/cart_to_home_button"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:textColorHint="@color/whiteColor"
+            android:fontFamily="trebuchet ms"
+            android:background="@drawable/button_background"
+            android:hint="@string/rent_now_text"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            />
+
+
+    </LinearLayout>
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:gravity="center"-->
+    <!--android:text="@string/no_book_in_cart_text"-->
+    <!--android:textSize="25sp"-->
+    <!--android:id="@+id/no_book_in_cart_text_view"-->
+    <!--android:visibility="gone"-->
+    <!--android:textColor="@color/red"/>-->
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/cart_content"
+        >
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="10dp"
+            android:id="@+id/cart_delivery_payment_image_view_linearlayout"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cart_delivery_payment_image_height"
+                android:id="@+id/cart_highlight_image_view"
+                android:background="@drawable/cart_red"
+                android:layout_gravity="center_vertical" />
+
+        </LinearLayout>
+
+
+        <!--all other views linear layout  -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cart_delivery_payment_image_view_linearlayout"
+            android:layout_marginTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_above="@+id/sticky_footer"
+            android:orientation="vertical"
+            >
+
+
+            <!-- books itme recyler view  -->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/my_cart_books_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:minHeight="200dp"
+                android:orientation="vertical" >
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+        <!--sticky footer  -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:background="@color/whiteColor"
+            android:id="@+id/sticky_footer"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/footer"
+                android:orientation="horizontal"
+                >
+
+
+
+                <Button
+                    android:id="@+id/continue_browsing"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_margin="5dp"
+                    android:textColorHint="@color/whiteColor"
+                    android:fontFamily="trebuchet ms"
+                    android:background="@drawable/button_background"
+                    android:hint="@string/continue_browsing"
+                    android:textSize="@dimen/common_half_Screen_button_text_size"
+                    android:textStyle="bold"
+                    />
+                <Button
+                    android:id="@+id/checkout_button"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_margin="5dp"
+                    android:textColorHint="@color/whiteColor"
+                    android:fontFamily="trebuchet ms"
+                    android:background="@drawable/button_background"
+                    android:hint="@string/checkout_button_text"
+                    android:textSize="@dimen/common_half_Screen_button_text_size"
+                    android:textStyle="bold"
+                    />
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

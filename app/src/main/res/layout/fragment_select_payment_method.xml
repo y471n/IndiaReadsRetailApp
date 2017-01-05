@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.indiareads.retailapp.views.fragments.SelectPaymentMethodFragment">
+
+    <include
+        android:id="@+id/select_payment_method_loading_screen"
+        layout="@layout/loading_screen" />
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/select_payment_method_content"
+   >
+
+    <!--cart delivery paymentMethod image linear layout  -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="10dp"
+        android:id="@+id/cart_delivery_payment_image_view_linearlayout"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cart_delivery_payment_image_height"
+            android:id="@+id/cart_highlight_image_view"
+            android:background="@drawable/payment_red"
+            android:layout_gravity="center_vertical" />
+
+    </LinearLayout>
+
+
+    <!--linear layout for rest of Views  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/cart_delivery_payment_image_view_linearlayout"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        >
+
+        <!-- Amount payable linear layout  -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:paddingTop="13dp"
+            android:background="@color/whiteColor"
+            android:orientation="horizontal"
+            >
+
+
+            <TextView
+                android:text="@string/amount_payable_text"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="@string/amount_payable_dummy_text"
+                android:id="@+id/amount_payable"
+                android:textSize="18sp"
+                android:textColor="@color/red"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
+        <!-- select paymentMethod methods linear layout  -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@color/whiteColor"
+            android:orientation="vertical"
+            >
+
+
+            <TextView
+                android:text="@string/select_payment_method_text"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <!-- select paymentMethod options radio buttons linear layout  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:id="@+id/pay_online_linear_layout"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/pay_online_image_view"
+                            android:layout_width="18dp"
+                            android:tag="@string/checked"
+                            android:background="@drawable/checked"
+                            android:layout_height="18dp"
+                            android:checked="true" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/pay_online_image" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:id="@+id/paytm_linear_layout"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/paytm_image_view"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:tag="@string/unchecked"
+                            android:background="@drawable/unchecked"
+                            android:checked="false" />
+
+                        <ImageView
+                            android:layout_width="65dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="20dp"
+                            android:src="@drawable/paytm" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:id="@+id/pay_u_money_linear_layout"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/pay_u_money_image_view"
+                            android:layout_width="18dp"
+                            android:tag="@string/unchecked"
+                            android:background="@drawable/unchecked"
+                            android:layout_height="18dp"
+                            android:checked="false" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:src="@drawable/payumoney" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/cash_on_delivery_linear_layout"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/cash_on_delivery_image_view"
+                            android:layout_width="18dp"
+                            android:tag="@string/unchecked"
+                            android:background="@drawable/unchecked"
+                            android:layout_height="18dp"
+                            android:checked="false" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:src="@drawable/cash_on_delivery_image1" />
+                    </LinearLayout>
+
+
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+        <!--coupon edit text linear layout -->
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:orientation="horizontal">
+
+
+      <!--Relative layout to put +91 button on edit text  -->
+            <RelativeLayout
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                >
+                    <EditText
+                        android:id="@+id/coupon_code_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="40dp"
+                        android:hint="@string/coupon_entry_hint"/>
+
+
+
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/remove_coupon_button"
+                    android:visibility="gone"
+                    android:background="@drawable/undo_cross"
+                   />
+
+
+
+            </RelativeLayout>
+
+
+
+            <Button
+                android:id="@+id/apply_coupon_button"
+                android:textColor="@color/red"
+                android:background="@drawable/button_color_border_transparent_background"
+                android:text="@string/apply"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="35dp" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:text="@string/coupon_message_dummy_text"
+            android:id="@+id/coupon_message"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/red"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content" />
+
+
+
+
+
+    </LinearLayout>
+
+    <!-- proceed to paymentMethod button  -->
+
+
+    <Button
+        android:id="@+id/place_order_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:textColorHint="@color/whiteColor"
+        android:layout_margin="5dp"
+        android:background="@drawable/button_background"
+        android:fontFamily="trebuchet ms"
+        android:hint="@string/continue_text"
+        android:textSize="@dimen/common_full_screen_button_text_size"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textStyle="bold"
+        />
+
+
+
+</RelativeLayout>
+
+
+
+</LinearLayout>

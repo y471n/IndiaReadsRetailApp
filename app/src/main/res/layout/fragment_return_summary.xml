@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyborder"
+    tools:context="com.indiareads.retailapp.views.fragments.OrderSummaryFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+
+        <!--book name and paymentMethod info card linear layout  -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/whiteColor"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:padding="10dp"
+            >
+
+            <!--dynamic generated book names linear layout  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linear_layout_to_add_return_books_dynamically"
+                android:orientation="vertical"
+                >
+
+
+
+            </LinearLayout>
+
+
+
+            <!-- charges linear layout  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@color/greyborder"
+                    />
+
+
+                <!--Total payable linear layout  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:text="@string/total_refund_tag"
+                        android:textSize="15sp"
+                        android:layout_width="0dp"
+                        android:textColor="@color/red"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="right"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:text="@string/rs_tag"
+                            android:textSize="15sp"
+                            android:textColor="@color/red"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:text="@string/total_refund_dummy_text"
+                        android:id="@+id/total_refund"
+                        android:textSize="15sp"
+                        android:textColor="@color/red"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/greyborder"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--shipping address linear layout  -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/whiteColor"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:padding="10dp"
+            >
+            <!--shipping_address_tag linear layout  -->
+
+            <LinearLayout
+                android:layout_width="125dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="@string/pickup_address_address_tag"
+                    android:layout_width="match_parent"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:text="@string/address_line_1_dummy_text"
+                    android:layout_width="match_parent"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/address_line_1"
+                    android:text="@string/address_line_2_dummy_text"
+                    android:layout_width="match_parent"
+                    android:textSize="15sp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/address_line_2"
+                    android:text="@string/address_line_3_dummy_text"
+                    android:layout_width="match_parent"
+                    android:textSize="15sp"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/state"
+                        android:text="@string/state_text"
+                        android:layout_width="wrap_content"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_height="match_parent" />
+                    <!--<TextView-->
+                        <!--android:text="@string/comma"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_marginLeft="3dp"-->
+                        <!--android:textSize="15sp"-->
+                        <!--android:textStyle="bold"-->
+                        <!--android:layout_height="match_parent" />-->
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/city"
+                    android:text="@string/city_text"
+                    android:layout_width="wrap_content"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:id="@+id/pincode"
+                    android:text="@string/address_line_4_dummy_text"
+                    android:layout_width="match_parent"
+                    android:textSize="15sp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/phone_number"
+                    android:text="@string/phone_dummy_text"
+                    android:layout_width="match_parent"
+                    android:textSize="15sp"
+                    android:layout_height="wrap_content" />
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--refund_amount mode linear layout  -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:padding="5dp"
+            android:background="@color/whiteColor"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="@string/refund_mode_tag"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="@string/refund_mode_dummy_text"
+                android:id="@+id/refund_mode"
+                android:textSize="15sp"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_marginRight="16dp"-->
+            <!--android:layout_marginBottom="16dp"-->
+            <!--android:padding="5dp"-->
+            <!--android:background="@color/whiteColor"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<TextView-->
+                <!--android:text="@string/pickup_date_tag"-->
+                <!--android:textSize="15sp"-->
+                <!--android:gravity="center"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_height="wrap_content" />-->
+
+            <!--<TextView-->
+                <!--android:text="@string/pickup_date_dummy"-->
+                <!--android:id="@+id/refund_date"-->
+                <!--android:textSize="15sp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_height="wrap_content" />-->
+
+        <!--</LinearLayout>-->
+
+    </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/return_summary_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:textColorHint="@color/whiteColor"
+        android:fontFamily="trebuchet ms"
+        android:background="@color/light_red"
+        android:hint="@string/continue_shopping_button_text"
+        android:textSize="@dimen/common_full_screen_button_text_size"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+
+        />
+
+</RelativeLayout>
+

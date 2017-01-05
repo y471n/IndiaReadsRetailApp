@@ -1,0 +1,343 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/whiteColor"
+    tools:context="com.indiareads.retailapp.corporate.view.fragment.OrderSummaryFragmentCorporate">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/error_linear_layout"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:id="@+id/message"
+            android:textSize="22sp"
+            android:text="@string/no_book_available"/>
+
+        <Button
+            android:id="@+id/retry_button"
+            android:hint="@string/retry"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/whiteColor"
+            android:fontFamily="trebuchet ms"
+            android:background="@drawable/button_background"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/complete_layout"
+        >
+
+
+        <include
+            android:id="@+id/order_summary_loading_screen"
+            layout="@layout/loading_screen" />
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/greyborder"
+            android:id="@+id/order_summary_content"
+            >
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/proceed_to_thanku_page"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+
+                    <!--book name and paymentMethod info card linear layout  -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/whiteColor"
+                        android:orientation="vertical"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:padding="10dp"
+                        >
+
+                        <!--dynamic generated book names linear layout  -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:id="@+id/linear_layout_for_dynamic_books"
+                            >
+
+
+
+                        </LinearLayout>
+
+
+
+                        <!-- charges linear layout  -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            >
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="13dp"
+                                android:background="@color/greyborder"
+                                />
+
+
+                            <!--Total payable linear layout  -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:text="@string/total_payable_tag"
+                                    android:textSize="15sp"
+                                    android:layout_width="wrap_content"
+                                    android:textColor="@color/red"
+                                    android:layout_height="wrap_content" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="end"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:text="@string/Rs_text"
+                                        android:textSize="15sp"
+                                        android:textColor="@color/red"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                    <TextView
+                                        android:text="@string/shipping_charges_dummy_text"
+                                        android:id="@+id/total_payable"
+                                        android:textSize="15sp"
+                                        android:textColor="@color/red"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@color/greyborder"
+                                />
+
+
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+
+
+                    <!--shipping address linear layout  -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/whiteColor"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:padding="10dp"
+                        >
+                        <!--shipping_address_tag linear layout  -->
+
+                        <LinearLayout
+                            android:layout_width="125dp"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:text="@string/shipping_address_tag"
+                                android:layout_width="match_parent"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+
+                        <!-- linear layout of address lines -->
+                        <LinearLayout
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="30dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/name"
+                                android:text="@string/address_line_1_dummy_text"
+                                android:layout_width="match_parent"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/address_line_1"
+                                android:text="@string/address_line_2_dummy_text"
+                                android:layout_width="match_parent"
+                                android:textSize="15sp"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/address_line_2"
+                                android:text="@string/address_line_3_dummy_text"
+                                android:layout_width="match_parent"
+                                android:textSize="15sp"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/city"
+                                android:text="@string/city_text"
+                                android:layout_width="match_parent"
+                                android:textSize="15sp"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/state"
+                                android:text="@string/state_text"
+                                android:layout_width="wrap_content"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:layout_height="wrap_content" />
+
+
+
+                            <TextView
+                                android:id="@+id/pincode"
+                                android:text="@string/address_line_4_dummy_text"
+                                android:layout_width="match_parent"
+                                android:textSize="15sp"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/phone_number"
+                                android:text="@string/phone_dummy_text"
+                                android:layout_width="match_parent"
+                                android:textSize="15sp"
+                                android:layout_height="wrap_content" />
+
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+
+
+                    <!--paymentMethod mode linear layout  -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:background="@color/whiteColor"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:text="@string/payment_mode_tag"
+                            android:textSize="15sp"
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="@string/payment_mode_dummy_text"
+                            android:id="@+id/payment_mode"
+                            android:textSize="15sp"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+
+
+
+
+
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <Button
+                android:id="@+id/proceed_to_thanku_page"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:textColorHint="@color/whiteColor"
+                android:fontFamily="trebuchet ms"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_background"
+                android:hint="@string/make_payment_button_text"
+                android:textSize="@dimen/common_full_screen_button_text_size"
+                android:layout_alignParentBottom="true"
+                android:textAllCaps="false"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                />
+
+
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

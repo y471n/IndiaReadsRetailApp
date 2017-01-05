@@ -1,0 +1,149 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.indiareads.retailapp.corporate.view.fragment.ChoosePickUpAddressFragmentCorporate"
+    android:background="@color/whiteColor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/error_linear_layout"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:id="@+id/message"
+            android:textSize="22sp"
+            android:text="@string/no_book_available"/>
+
+        <Button
+            android:id="@+id/retry_button"
+            android:hint="@string/retry"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/whiteColor"
+            android:fontFamily="trebuchet ms"
+            android:background="@drawable/button_background"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/complete_layout"
+        android:background="@color/whiteColor"
+        >
+
+        <include
+            android:id="@+id/pick_up_address_loading_screen"
+            layout="@layout/loading_screen" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/pick_up_address_content"
+            >
+
+
+            <!--all other views linear layout  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="33dp"
+                    android:padding="1dp"
+                    android:layout_gravity="center"
+                    android:background="#ff4633"
+                    >
+
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="5dp"
+                        android:textColor="#ff4633"
+                        android:textSize="18sp"
+                        android:textAllCaps="false"
+                        android:id="@+id/add_new_address"
+                        android:text="@string/add_new_address_button_text"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:background="#ffffff"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textSize="20sp"
+                    android:id="@+id/no_address_in_list_text"
+                    android:visibility="gone"
+                    android:text="@string/no_address_in_list_text"/>
+
+
+                <!-- address items recyler view  -->
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/address_items_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                </android.support.v7.widget.RecyclerView>
+
+
+
+            </LinearLayout>
+
+
+            <!-- proceed to paymentMethod button  -->
+
+
+            <Button
+                android:id="@+id/proceed_to_pickup_Details"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:textColorHint="@color/whiteColor"
+                android:background="@color/light_red"
+                android:hint="@string/confirm_text"
+                android:textSize="@dimen/common_full_screen_button_text_size"
+                android:textStyle="bold"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                />
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

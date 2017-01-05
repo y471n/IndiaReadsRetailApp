@@ -1,0 +1,45 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.indiareads.retailapp.views.activities.LoginActivity">
+
+        <item android:id="@+id/overflow_menu"
+            android:icon="@drawable/ic_action_overflow"
+            android:title="nose"
+            app:showAsAction="always">
+            <menu>
+                <!-- Bookshelf -->
+                <item android:id="@+id/action_book_shelf"
+                    android:icon="@drawable/bookshelf"
+                    android:title="@string/book_shelf"
+                    app:showAsAction="never"/>
+
+
+                <!-- Bookshelf -->
+                <item android:id="@+id/action_return_books"
+                    android:icon="@drawable/return_books"
+                    android:title="@string/return_book"
+                    app:showAsAction="never"/>
+
+                <!-- My Orders -->
+                <item android:id="@+id/action_my_orders"
+                    android:icon="@drawable/my_orders"
+                    android:title="@string/my_orders"
+                    app:showAsAction="never"/>
+
+                <!-- My Orders -->
+                <item android:id="@+id/action_store_credits"
+                    android:icon="@drawable/my_orders"
+                    android:title="@string/store_credits"
+                    app:showAsAction="never"/>
+
+                <!-- My Orders -->
+                <item android:id="@+id/my_profile"
+                    android:icon="@drawable/my_profile_menu_icon"
+                    android:title="@string/my_profile"
+                    app:showAsAction="never"/>
+
+            </menu>
+        </item>
+
+</menu>

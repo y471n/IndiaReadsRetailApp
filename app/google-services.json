@@ -1,0 +1,43 @@
+{
+  "project_info": {
+    "project_number": "515160911274",
+    "project_id": "iread-8045e"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515160911274:android:f9f93e50f2123824",
+        "android_client_info": {
+          "package_name": "com.indiareads.retailapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515160911274-u5trpbmqf7udvrt82117380li3tecml1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDi1J_uuSbrxX-dwj15jBOq_dpyaMAcgCg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-49338332-2"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

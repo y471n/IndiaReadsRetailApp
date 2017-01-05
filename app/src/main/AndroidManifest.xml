@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.indiareads.retailapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permssion.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <compatible-screens>
+
+        <!-- all small size screens -->
+        <screen
+            android:screenDensity="ldpi"
+            android:screenSize="small" />
+        <screen
+            android:screenDensity="mdpi"
+            android:screenSize="small" />
+        <screen
+            android:screenDensity="hdpi"
+            android:screenSize="small" />
+        <screen
+            android:screenDensity="xhdpi"
+            android:screenSize="small" />
+        <screen
+            android:screenDensity="480"
+            android:screenSize="small" />
+        <screen
+            android:screenDensity="640"
+            android:screenSize="small" />
+
+        <!-- all normal size screens -->
+        <screen
+            android:screenDensity="ldpi"
+            android:screenSize="normal" />
+        <screen
+            android:screenDensity="mdpi"
+            android:screenSize="normal" />
+        <screen
+            android:screenDensity="hdpi"
+            android:screenSize="normal" />
+        <screen
+            android:screenDensity="xhdpi"
+            android:screenSize="normal" />
+        <screen
+            android:screenDensity="480"
+            android:screenSize="normal" />
+        <screen
+            android:screenDensity="560"
+            android:screenSize="normal" />
+        <screen
+            android:screenDensity="640"
+            android:screenSize="normal" />
+    </compatible-screens>
+
+    <application
+        android:name=".utils.IndiaReadsApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <!-- Notice this tag which provides the database name -->
+        <meta-data
+            android:name="AA_DB_NAME"
+            android:value="mycartdatabase.db" />
+
+        <!-- Notice this tag which provides the database version -->
+        <meta-data
+            android:name="AA_DB_VERSION"
+            android:value="2" />
+        <meta-data
+            android:name="AA_MODELS"
+            android:value="com.indiareads.retailapp.models.CartModel,com.indiareads.retailapp.corporate.models.CartModelCorporate" />
+        <meta-data
+            android:name="AA_SERIALIZERS"
+            android:value="com.indiareads.retailapp.utils.UtilRentSerializer" />
+
+        <activity
+            android:name="com.paytm.pgsdk.PaytmPGActivity"
+            android:configChanges="keyboardHidden|orientation|keyboard"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.indiareads.retailapp.views.activities.SearchableActivity" />
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".corporate.view.activity.MainActivityCorporate"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.indiareads.retailapp.corporate.view.activity.SearchableActivityCorporate" />
+        </activity>
+        <activity
+            android:name=".views.activities.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".views.activities.SearchableActivity"
+            android:label="@string/title_activity_search_book"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".views.activities.ThankYouActivity"
+            android:label="@string/title_activity_thank_you"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.SignUpActivity"
+            android:label="@string/title_activity_sign_up"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.ForgotPasswordActivity"
+            android:label="@string/title_activity_forgot_password"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.MyCartActivity"
+            android:label="@string/title_activity_my_cart"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.indiareads.retailapp.views.activities.SearchableActivity" />
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".views.activities.AddAddressActivity"
+            android:label="@string/title_activity_add_address"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.SelectPaymentMethodActivity"
+            android:label="@string/title_activity_select_payment_method"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.MainLoginActivity"
+            android:label="@string/title_activity_main_login"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.ChooseDeliveryAddressActivity"
+            android:label="@string/title_activity_choose_delivery_address"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.OrderSummaryActivity"
+            android:label="@string/title_activity_order_summary"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.ProductPageActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.indiareads.retailapp.views.activities.SearchableActivity" />
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".views.activities.BookShelfActivity"
+            android:label="@string/title_activity_book_shelf"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.indiareads.retailapp.views.activities.SearchableActivity" />
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".views.activities.StoreCreditsActivity"
+            android:label="@string/title_store_credits"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.indiareads.retailapp.views.activities.SearchableActivity" />
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".views.activities.MyOrderActivity"
+            android:label="@string/title_my_orders"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.indiareads.retailapp.views.activities.SearchableActivity" />
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".views.activities.CategoryListingActivity"
+            android:label="@string/title_category_listing"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.indiareads.retailapp.views.activities.SearchableActivity" />
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".views.activities.ReturnSummaryActivity"
+            android:label="@string/title_activity_return_summary"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.PickupDetailsActivity"
+            android:label="@string/title_activity_pickup_details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.OrderDetailsActivity"
+            android:label="@string/title_activity_order_details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.ProfilePageActivity"
+            android:label="@string/title_activity_profile_page"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".views.activities.MyAccountActivity"
+            android:label="@string/title_activity_my_account"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.indiareads.retailapp.views.activities.SearchableActivity" />
+        </activity>
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".views.activities.FilterPageActivity"
+            android:label="@string/title_activity_filter"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.AddressBook"
+            android:label="@string/title_activity_address_book"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.HowItWorksActivity"
+            android:label="@string/how_it_works"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.ContactUsActivity"
+            android:label="@string/title_activity_contact_us"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".views.activities.AddressBookAddAddressActivity"
+            android:label="@string/title_activity_address_book_add_address"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".views.activities.ChoosePickUpAddressActivity"
+            android:label="@string/title_activity_return_book_choose_delivery_address"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".views.activities.ReturnBookAddAddressActivity"
+            android:label="@string/title_activity_return_book_add_address"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".views.activities.LoginActivityMenu"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".corporate.view.activity.ProductPageActivityCorp"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.indiareads.retailapp.corporate.view.activity.SearchableActivityCorporate" />
+        </activity>
+        <activity android:name=".corporate.view.activity.CategoryListingActivityCorp">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.indiareads.retailapp.corporate.view.activity.SearchableActivityCorporate" />
+        </activity>
+        <activity
+            android:name=".corporate.view.activity.MyCartActivityCorporate"
+            android:label="@string/title_activity_my_cart"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.indiareads.retailapp.corporate.view.activity.SearchableActivityCorporate" />
+        </activity>
+        <activity
+            android:name=".corporate.view.activity.ChooseDeliveryAddressActivityCorporate"
+            android:label="@string/title_activity_choose_delivery_address"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".corporate.view.activity.AddAddressActivityCorporate"
+            android:label="@string/title_activity_address_book_add_address"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".corporate.view.activity.FilterPageActivityCorporate"
+            android:label="@string/title_activity_filter"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".corporate.view.activity.SelectPaymentMethodActivityCorporate"
+            android:label="@string/title_activity_select_payment_method"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".corporate.view.activity.ThankYouActivityCorporate"
+            android:label="@string/title_activity_thank_you"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".corporate.view.activity.OrderSummaryActivityCorporate"
+            android:label="@string/title_activity_order_summary"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".corporate.view.activity.BookShelfActivityCorporate"
+            android:label="@string/title_activity_book_shelf"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.indiareads.retailapp.corporate.view.activity.SearchableActivityCorporate" />
+        </activity>
+        <activity
+            android:name=".corporate.view.activity.ChoosePickUpAddressActivityCorporate"
+            android:label="@string/title_activity_return_book_choose_delivery_address"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".corporate.view.activity.ReturnBookAddAddressActivityCorporate"
+            android:label="@string/title_activity_return_book_add_address"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".corporate.view.activity.PickupDetailsActivityCorporate"
+            android:label="@string/title_activity_pickup_details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".corporate.view.activity.ReturnSummaryActivityCorporate"
+            android:label="@string/title_activity_return_summary"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".corporate.view.activity.MyOrderActivityCorporate"
+            android:label="@string/title_my_orders"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.indiareads.retailapp.corporate.view.activity.SearchableActivityCorporate" />
+        </activity>
+        <activity
+            android:name=".corporate.view.activity.OrderDetailsActivityCorporate"
+            android:label="@string/title_activity_order_details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".corporate.view.activity.MyAccountActivityCorporate"
+            android:label="@string/title_activity_my_account"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.indiareads.retailapp.corporate.view.activity.SearchableActivityCorporate" />
+        </activity>
+        <activity
+            android:name=".corporate.view.activity.AddressBookCorporate"
+            android:label="@string/title_activity_address_book"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".corporate.view.activity.AddressBookAddAddressActivityCorporate"
+            android:label="@string/title_activity_address_book_add_address"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".corporate.view.activity.ProfilePageActivityCorporatte"
+            android:label="@string/title_activity_profile_page"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".corporate.view.activity.SearchableActivityCorporate"
+            android:label="@string/title_activity_search_book"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity android:name=".views.activities.HowItWorksActivityCorporate" />
+        <activity android:name=".corporate.view.activity.ContactUsActivityCorporate"></activity>
+    </application>
+
+</manifest>

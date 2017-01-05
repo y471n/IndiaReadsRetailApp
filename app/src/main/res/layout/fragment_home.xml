@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/whiteColor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/error_linear_layout"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:id="@+id/message"
+            android:textSize="22sp"
+            android:text="@string/no_book_available"/>
+
+        <Button
+            android:id="@+id/retry_button"
+            android:hint="@string/retry"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/whiteColor"
+            android:fontFamily="trebuchet ms"
+            android:background="@drawable/button_background"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/complete_layout"
+    android:background="@color/whiteColor">
+
+
+    <ScrollView
+        android:id="@+id/home_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/whiteColor">
+
+
+       <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="@color/black"
+                android:layout_height="170dp">
+
+                <!-- loading screen for Home Banner -->
+                <include
+                    android:id="@+id/banner_loading_screen"
+                    layout="@layout/loading_screen" />
+
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                   <android.support.v4.view.ViewPager
+                        android:id="@+id/homepage_banner_viewpager"
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                    <LinearLayout
+                        android:id="@+id/dots_linear_layout"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerInParent="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="5dp"
+                        >
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <!-- Linear layout - HEADING - DEPARTMENT -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_shop_by_department"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/home_page_heading_size" />
+
+
+
+            </LinearLayout>
+
+            <!-- Linear layout - IMAGES - DEPARTMENT -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="5dp"
+                android:orientation="horizontal">
+
+                <!-- Relative layout - DEPARTMENT IMAGE VIEW 1 -->
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/department_category1_imageview"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/fiction" />
+
+                    <TextView
+                        android:id="@+id/department_textview1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="126dp"
+                        android:text="@string/department_textview1_text"
+                        android:textStyle="bold"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
+
+                <!-- Linear layout - DEPARTMENT IMAGE VIEW 2 and 3 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:orientation="vertical">
+
+
+                    <!-- Relative layout - DEPARTMENT IMAGE VIEW 2 -->
+                    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:tools="http://schemas.android.com/tools"
+                        android:layout_width="fill_parent"
+                        android:layout_height="74dp">
+
+                        <ImageView
+                            android:id="@+id/department_category2_imageview"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentRight="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/academics" />
+
+                        <TextView
+                            android:id="@+id/department_textview2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="7dp"
+                            android:text="@string/department_textview2_text"
+                            android:textStyle="bold"
+                            android:textColor="@color/whiteColor"
+                            android:textSize="15sp" />
+
+                    </RelativeLayout>
+
+
+                    <!-- Relative layout - DEPARTMENT IMAGE VIEW 3 -->
+                    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:tools="http://schemas.android.com/tools"
+                        android:layout_width="fill_parent"
+                        android:layout_height="74dp"
+                        android:layout_marginTop="4dp">
+
+                        <ImageView
+                            android:id="@+id/department_category3_imageview"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentRight="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/comics" />
+
+                        <TextView
+                            android:id="@+id/department_textview3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="7dp"
+                            android:text="@string/department_textview3_text"
+                            android:textStyle="bold"
+                            android:textColor="@color/whiteColor"
+                            android:textSize="15sp" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+                <!-- Relative layout - DEPARTMENT IMAGE VIEW 4 -->
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp">
+
+                    <ImageView
+                        android:id="@+id/department_category4_imageview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/biography" />
+
+                    <TextView
+                        android:id="@+id/department_textview4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="126dp"
+                        android:text="@string/department_textview4_text"
+                        android:textStyle="bold"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <!-- Linear layout - HEADING - RECOMMENDATION -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal"
+
+               >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_recommendation"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/home_page_heading_size"/>
+
+            </LinearLayout>
+
+<!-- loading screen for recommendation books -->
+            <include
+                android:id="@+id/recommendation_loading_screen"
+                android:layout_marginTop="45dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/loading_screen" />
+
+            <!-- RECOMMENDATION recycler view -->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recommendation_recycler_view"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/min_height_of_recyler_view"
+                android:orientation="horizontal" />
+
+
+            <!-- Linear layout - HEADING - POPULAR -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal"
+                android:paddingRight="16dp"
+               >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_popular"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/home_page_heading_size" />
+
+
+            </LinearLayout>
+
+            <!-- loading screen for trending books -->
+            <include
+                android:id="@+id/trending_loading_screen"
+                layout="@layout/loading_screen"
+                android:layout_marginTop="45dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <!-- TRENDING recycler view -->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/trending_recycler_view"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/min_height_of_recyler_view"
+                android:orientation="horizontal" />
+
+
+
+
+
+
+            <!-- Linear layout - HEADING - New Books -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="32dp"
+                android:paddingRight="16dp"
+               >
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_new_books"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/home_page_heading_size" />
+
+
+            </LinearLayout>
+
+            <!-- loading screen for new books -->
+            <include
+                android:id="@+id/new_books_loading_screen"
+                layout="@layout/loading_screen"
+                android:layout_marginTop="45dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <!-- New Books recycler view -->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/new_books_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minHeight="@dimen/min_height_of_recyler_view"
+                android:layout_marginBottom="25dp"
+                android:orientation="horizontal" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>
+
+
+
+</LinearLayout>

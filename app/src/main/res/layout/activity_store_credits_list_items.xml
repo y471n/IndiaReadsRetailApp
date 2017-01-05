@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/store_credit_card_view"
+    android:layout_width="match_parent"
+    android:background="#19191919"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:background="#ffffff">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="@string/store_credit_issue_date_tag"
+                android:textColor="#9a010101"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:text="@string/colon"
+                android:textColor="#ea1a1a1a"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/store_credit_issue_date_dummydata"
+                android:id="@+id/issue_date"
+                android:textColor="#9a010101"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="@string/store_credit_amount_tag"
+                android:textColor="#9a010101"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:text="@string/colon"
+                android:textColor="#ea1a1a1a"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/store_credit_amount_dummydata"
+                android:id="@+id/amount"
+                android:textColor="#ff403d"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="@string/store_credit_orderid_tag"
+                android:textColor="#9a010101"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:text="@string/colon"
+                android:textColor="#ea1a1a1a"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/store_credit_orderid_dummydata"
+                android:id="@+id/order_id"
+                android:textColor="#9a010101"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <!--<LinearLayout-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:padding="5dp">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="150dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:text="@string/store_credit_deduction_tag"-->
+                <!--android:textColor="#9a010101"-->
+                <!--android:textSize="15sp" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="30dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:text="@string/colon"-->
+                <!--android:textColor="#ea1a1a1a"-->
+                <!--android:textSize="15sp" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:id="@+id/deduction_reason"-->
+                <!--android:textColor="#9a010101"-->
+                <!--android:textSize="15sp"/>-->
+        <!--</LinearLayout>-->
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="@string/store_credit_status_tag"
+                android:textColor="#9a010101"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:text="@string/colon"
+                android:textColor="#ea1a1a1a"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/store_credit_status_dummydata"
+                android:id="@+id/status"
+                android:textColor="#6bc54a"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

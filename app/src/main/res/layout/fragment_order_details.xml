@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/greyborder"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <include
+        android:id="@+id/order_detail_page_loading_screen"
+        layout="@layout/loading_screen" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="5dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        android:background="@color/greyborder"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginTop="16dp"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_id_header"
+                    android:textColor="@color/primary_dark_material_light"
+                    android:textSize="13dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/colon"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_dark_material_light" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_id_dummy_text"
+                    android:id="@+id/order_id"
+                    android:textSize="13dp"
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:textColor="@color/primary_dark_material_light"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_placed_tag"
+                    android:textColor="@color/primary_dark_material_light"
+                    android:textSize="13dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/colon"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_dark_material_light" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_placed_date_dummy_text"
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:id="@+id/order_placed_date"
+                    android:textSize="13dp"
+                    android:textColor="@color/primary_dark_material_light"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                android:weightSum="2"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title"
+                    android:textColor="@color/primary_dark_material_light"
+                    android:textSize="13dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/colon"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_dark_material_light" />
+
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:text="@string/book_name_dummy_text"
+                    android:id="@+id/my_order_book_name"
+                    android:textColor="@color/primary_dark_material_light"
+                    android:textSize="13dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cart_book_author_name"
+                    android:textColor="@color/primary_dark_material_light"
+                    android:textSize="13dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/colon"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_dark_material_light" />
+
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:text="@string/cart_book_author_name"
+                    android:id="@+id/my_order_author_name"
+                    android:textColor="@color/primary_dark_material_light"
+                    android:textSize="13dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary_dark_material_light"
+                    android:text="@string/initial_paid"
+                    android:textSize="13sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/colon"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_dark_material_light" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:textColor="@color/primary_dark_material_light"
+                    android:textSize="13sp"
+                    android:text="@string/cart_item_initial_payable"
+                    android:id="@+id/cart_book_item_initial_payable_price_textview" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary_dark_material_light"
+                    android:text="@string/payment_mode_tag"
+                    android:textSize="13sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/colon"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_dark_material_light" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary_dark_material_light"
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:textSize="13sp"
+                    android:text="@string/payment_mode_dummy_text"
+                    android:id="@+id/order_details_payment_mode" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="#ffffff"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            >
+            <!--shipping_address_tag linear layout  -->
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:text="@string/shipping_address_tag"
+                    android:layout_width="match_parent"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+
+            <!-- linear layout of address lines -->
+            <!-- linear layout of address lines -->
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:text="@string/address_line_1_dummy_text"
+                    android:layout_width="match_parent"
+                    android:textSize="13sp"
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/address_line_1"
+                    android:text="@string/address_line_2_dummy_text"
+                    android:layout_width="match_parent"
+                    android:textSize="13sp"
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/address_line_2"
+                    android:text="@string/address_line_3_dummy_text"
+                    android:layout_width="match_parent"
+                    android:textSize="15sp"
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/city"
+                    android:text="@string/city_text"
+                    android:layout_width="match_parent"
+                    android:textSize="13sp"
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/state"
+                    android:text="@string/state_text"
+                    android:layout_width="wrap_content"
+                    android:textSize="13sp"
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:layout_height="wrap_content" />
+
+
+
+                <TextView
+                    android:id="@+id/pincode"
+                    android:text="@string/address_line_4_dummy_text"
+                    android:layout_width="match_parent"
+                    android:textSize="13sp"
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/phone_number"
+                    android:text="@string/phone_dummy_text"
+                    android:layout_width="match_parent"
+                    android:textSize="13sp"
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:layout_height="wrap_content" />
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="16dp"
+            android:background="#ffffff"
+            android:orientation="vertical"
+            android:id="@+id/to_be_delivered_layout"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary_dark_material_light"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/status_name"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/dot_text"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_dark_material_light" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary_dark_material_light"
+                    android:textSize="13sp"
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/status_date" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"        android:layout_marginTop="16dp"
+            android:background="#ffffff"
+            android:orientation="vertical"
+            android:id="@+id/tracking_details_layout"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tracking_details_tag"
+                android:textSize="13sp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:text="@string/tracking_id_tag"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tracking_id"
+                    android:textSize="13sp"
+                    android:text="@string/tracking_id_dummytext"
+                    />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textSize="13sp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/carrier_tag"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:textSize="13sp"
+                    android:paddingLeft="30dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/carrier_name"
+                    android:text="@string/tracking_id_dummytext"
+                    />
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

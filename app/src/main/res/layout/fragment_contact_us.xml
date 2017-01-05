@@ -1,0 +1,153 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/contact_us_submit_button"
+        android:layout_marginBottom="5dp"
+        android:isScrollContainer="false"
+        android:scrollbars="none"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:text="@string/contact_us_heading1"/>
+
+    <!-- name edit text -->
+    <android.support.design.widget.TextInputLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:inputType="textPersonName"
+            android:paddingLeft="@dimen/edit_text_padding"
+            android:hint="@string/complete_name"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <!-- email id edit text -->
+    <android.support.design.widget.TextInputLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="@dimen/edit_text_padding"
+            android:hint="@string/email"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <!-- Enter Phone No edit text -->
+    <android.support.design.widget.TextInputLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:inputType="phone"
+            android:paddingLeft="@dimen/edit_text_padding"
+            android:hint="@string/phone_number_text"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/issue_type_spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        style="@style/Widget.AppCompat.Spinner.Underlined"
+        android:layout_marginTop="15dp"/>
+
+    <!-- Query edit text -->
+    <android.support.design.widget.TextInputLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <EditText
+            android:id="@+id/query"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="@dimen/edit_text_padding"
+            android:hint="@string/query_text"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/contact_us_button"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:textColor="@color/red"
+        android:background="@drawable/button_color_border_transparent_background"
+        android:text="@string/contact_us_text_with_phone"
+        android:layout_marginRight="10dp"
+        android:layout_width="200dp"
+        android:layout_height="35dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="15sp"
+            android:textSize="18sp"
+            android:textColor="@color/red"
+            android:text="@string/app_email_text"/>
+
+     </LinearLayout>
+
+
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/contact_us_submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:textColorHint="@color/whiteColor"
+        android:fontFamily="trebuchet ms"
+        android:background="@color/red"
+        android:hint="@string/submit"
+        android:textSize="@dimen/common_full_screen_button_text_size"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+
+        />
+
+
+
+
+</RelativeLayout>
